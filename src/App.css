@@ -1,0 +1,16 @@
+.app-container {
+  background-color: #fff0f5;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Mali', sans-serif;
+  text-align: center;
+}
+
+.header h1 {
+  color: #ff66aa;
+  margin-top: 20px;
+}
+
+.header p {
+  color: #ff66aa;
+}
