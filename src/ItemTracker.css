@@ -58,7 +58,7 @@
     flex-shrink: 0;
   }
   
-  /* Button styling */
+  /* Button styling for increment/decrement */
   .item-button {
     border: none;
     background-color: #ff99aa;
@@ -76,6 +76,22 @@
     font-size: 16px;
   }
   
+  /* Reset button container */
+  .reset-container {
+    margin-top: 20px;
+  }
+  
+  /* Reset button styling */
+  .reset-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff66aa;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
   /* Responsive adjustments for mobile view */
   @media (max-width: 600px) {
     .item-card {
@@ -84,13 +100,11 @@
       padding: 10px 16px;
     }
     .item-info {
-      /* Keep icon and name in a row, and add bottom margin */
       display: flex;
       align-items: center;
       margin-bottom: 10px;
     }
     .controls {
-      margin-top: 0;
       justify-content: center;
       width: 100%;
     }
@@ -105,7 +119,6 @@
     .item-name {
       display: block;
       text-align: center;
-      margin-left: 0;
     }
   }
   
