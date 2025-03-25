@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './App.css';
 import ItemTracker from './ItemTracker';
 
 const headerStyles = {
@@ -15,6 +16,8 @@ const appContainerStyles = {
 };
 
 function App() {
+  const [activeTab, setActiveTab] = useState('items');
+
   return (
     <div style={appContainerStyles}>
       <header style={headerStyles}>

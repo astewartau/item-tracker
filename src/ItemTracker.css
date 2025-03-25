@@ -1,124 +1,162 @@
 .tracker-container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sorting control container */
+.sort-options {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Sort button styling */
+.sort-button {
+  padding: 6px 12px;
+  margin-left: 10px;
+  border: none;
+  background-color: #ff66aa;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Item card styling for desktop */
+.item-card {
+  background-color: #ffebf0;
+  border: 2px solid #ff99aa;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for icon and name */
+.item-info {
+  display: flex;
+  align-items: center;
+}
+
+/* New container to center the icon */
+.icon-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+/* Image icon styling */
+.item-icon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Name styling */
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Controls container for buttons and input */
+.controls {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Button styling for increment/decrement */
+.item-button {
+  border: none;
+  background-color: #ff99aa;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Styling for the manual number input */
+.item-input {
+  width: 60px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 8px;
+  padding: 4px;
+}
+
+/* Button styling for individual item reset */
+.reset-item-button {
+  border: none;
+  background-color: #ff99aa;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Reset button container */
+.reset-container {
+  margin-top: 20px;
+}
+
+/* Reset button styling */
+.reset-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff66aa;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 600px) {
+  .item-card {
     flex-direction: column;
     align-items: center;
+    padding: 10px 16px;
   }
-  
-  /* Item card styling for desktop */
-  .item-card {
-    background-color: #ffebf0;
-    border: 2px solid #ff99aa;
-    border-radius: 12px;
-    padding: 12px 20px;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Container for icon and name */
   .item-info {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
   }
-  
-  /* New container to center the icon */
-  .icon-container {
+  .controls {
+    justify-content: center;
+    width: 100%;
+  }
+  .item-button {
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
+    font-size: 20px;
   }
-  
-  /* Image icon styling */
-  .item-icon {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  
-  /* Name styling */
-  .item-name {
+  .item-input {
+    width: 50px;
     font-size: 18px;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 0 6px;
   }
-  
-  /* Controls container for buttons and count */
-  .controls {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
+  .reset-item-button {
+    font-size: 12px;
+    padding: 2px 6px;
   }
-  
-  /* Button styling for increment/decrement */
-  .item-button {
-    border: none;
-    background-color: #ff99aa;
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
+  .item-name {
+    display: block;
+    text-align: center;
   }
-  
-  /* Count styling */
-  .item-count {
-    margin: 0 10px;
-    font-size: 16px;
-  }
-  
-  /* Reset button container */
-  .reset-container {
-    margin-top: 20px;
-  }
-  
-  /* Reset button styling */
-  .reset-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #ff66aa;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  /* Responsive adjustments for mobile view */
-  @media (max-width: 600px) {
-    .item-card {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 16px;
-    }
-    .item-info {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .controls {
-      justify-content: center;
-      width: 100%;
-    }
-    .item-button {
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
-    }
-    .item-count {
-      margin: 0 8px;
-    }
-    .item-name {
-      display: block;
-      text-align: center;
-    }
-  }
-  
+}

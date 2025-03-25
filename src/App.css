@@ -2,15 +2,38 @@
   background-color: #fff0f5;
   min-height: 100vh;
   padding: 20px;
-  font-family: 'Mali', sans-serif;
-  text-align: center;
+  font-family: 'Goji', sans-serif;
 }
 
-.header h1 {
-  color: #ff66aa;
-  margin-top: 20px;
+.app-header {
+  font-family: '"Mali", sans-serif';
+  text-align: 'center';
+  margin-top: '20px';
+  color: '#ff66aa';
 }
 
-.header p {
-  color: #ff66aa;
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background-color: #ff99aa;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tab.active {
+  background-color: #ff66aa;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
 }
