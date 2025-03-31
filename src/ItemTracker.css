@@ -2,6 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
+}
+
+/* New styling for the item count display */
+.item-count {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 /* Sorting control container */
@@ -33,7 +41,7 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,6 +133,14 @@
   cursor: pointer;
 }
 
+/* Search container styling */
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
 /* Responsive adjustments for mobile view */
 @media (max-width: 600px) {
   .item-card {
@@ -158,5 +174,18 @@
   .item-name {
     display: block;
     text-align: center;
+  }
+  .search-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  .tracker-container {
+    padding-bottom: 70px;
   }
 }
