@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ItemTracker.css';
 import DEFAULT_ITEMS from './defaultItems';
+import { system } from '@chakra-ui/react/preset';
 
 const STORAGE_KEY = 'helloKittyIslandItems';
 const RESET_KEY = 'helloKittyIslandLastReset';
@@ -66,6 +67,13 @@ const ItemTracker = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleClear = (id) => {
+    const updated = items.map(item =>
+      item.id === id ? { ...item, count: 0 } : item
+    );
+    setItems(updated);
+  }
+
   const handleUpdate = (id, delta) => {
     const updated = items.map(item =>
       item.id === id ? { ...item, count: item.count + delta } : item
@@ -108,6 +116,7 @@ const ItemTracker = () => {
   };
 
   const sortItems = (items) => {
+    console.log(sortOption);
     let sorted = [...items];
     switch (sortOption) {
       case 'name-asc':
@@ -121,6 +130,14 @@ const ItemTracker = () => {
         break;
       case 'count-desc':
         sorted.sort((a, b) => b.count - a.count);
+        break;
+      case 'default':
+        // sort by 'id' which is a string like 'item01', 'item02', etc.
+        sorted.sort((a, b) => {
+          const numA = parseInt(a.id.replace('item', ''), 10);
+          const numB = parseInt(b.id.replace('item', ''), 10);
+          return numA - numB;
+        });
         break;
       default:
         break;
@@ -175,6 +192,13 @@ const ItemTracker = () => {
             <span className="item-name">{item.name}</span>
           </div>
           <div className="controls">
+            <button
+              className="item-clear-button"
+              onClick={() => handleClear(item.id)}
+              disabled={item.assigned}
+            > 
+              0
+            </button>
             <button
               className="item-button"
               onClick={() => handleUpdate(item.id, -1)}
